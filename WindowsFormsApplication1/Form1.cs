@@ -7,22 +7,25 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             Thread t = new Thread(new ThreadStart(SplashScreenStart));
             t.Start();
-            Thread.Sleep(5000);
-
             InitializeComponent();
-
+   
+            string str = string.Empty;
+            for(int i = 0; i < 50000; i++)
+            {
+                str += i.ToString();
+            }
             t.Abort();
-
         }
 
         public void SplashScreenStart()
         {
-            Application.Run(new Form2());
+            SplashScreen.SplashForm spfrm = new SplashScreen.SplashForm();
+            spfrm.AppName = "Caricamento";
+            Application.Run(spfrm);
         }
 
         public string OpenFile()
@@ -63,40 +66,31 @@ namespace WindowsFormsApplication1
 
         private void buttonImporta_Click(object sender, EventArgs e)
         {
-
             int i = 0;
             String line;
             int num;
-
-            //textArea.Text = "";
-
+            richTextBox1.Text = "";
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
                 StreamReader sr = new StreamReader(OpenFile());
-
                 //Read the first line of text
                 line = sr.ReadLine();
-
                 //Continue to read until you reach end of file
                 while (line != null)
                 {
-
                     try
                     {
-                        //textArea.Text += line + "\n";
+                        richTextBox1.Text += line + "\n";
                         num = System.Convert.ToInt32(line);
-
                         Vector.getInstance().addOrd(num);
-
                         i++;
                         line = sr.ReadLine();
                     }
                     catch (Exception a)
                     {
-
+                        MessageBox.Show("Errore");
                     }
-
                 }
                 //close the file
                 sr.Close();
@@ -111,7 +105,6 @@ namespace WindowsFormsApplication1
                 Console.WriteLine("Executing finally block.");
             }
             listValoriArray.DataSource = Vector.getInstance().getArray();
-
         }
 
         private void buttonInserisci_Click(object sender, EventArgs e)
@@ -123,18 +116,17 @@ namespace WindowsFormsApplication1
 
         private void buttonEsporta_Click(object sender, EventArgs e)
         {
-
             string path = OpenFile();
-            System.IO.File.WriteAllText(path, "");
+            System.IO.File.WriteAllText(path, richTextBox1.Text);
 
-            for (int i = 0; i < Vector.getInstance().getArray().Length; i++)
-            {
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, true))
-                {
-                    file.WriteLine(Vector.getInstance().getArray()[i].ToString());
-                }
-            }
-            
+            //for (int i = 0; i < Vector.getInstance().getArray().Length; i++)
+            //{
+            //    using (System.IO.StreamWriter file = new System.IO.StreamWriter(path, true))
+            //    {
+            //        file.WriteLine(Vector.getInstance().getArray()[i].ToString());
+            //    }
+            //}
+
         }
 
         private void textArea_TextChanged(object sender, EventArgs e)
@@ -145,6 +137,21 @@ namespace WindowsFormsApplication1
         private void Form1_Load(object sender, EventArgs e)
         {
         
+
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listValoriArray_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxValori_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

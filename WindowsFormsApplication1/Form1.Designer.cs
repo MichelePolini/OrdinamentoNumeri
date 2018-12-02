@@ -34,6 +34,7 @@
             this.listValoriArray = new System.Windows.Forms.ListBox();
             this.textBoxValori = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // buttonEsporta
@@ -78,6 +79,7 @@
             this.listValoriArray.Name = "listValoriArray";
             this.listValoriArray.Size = new System.Drawing.Size(159, 73);
             this.listValoriArray.TabIndex = 3;
+            this.listValoriArray.SelectedIndexChanged += new System.EventHandler(this.listValoriArray_SelectedIndexChanged);
             // 
             // textBoxValori
             // 
@@ -86,6 +88,7 @@
             this.textBoxValori.Name = "textBoxValori";
             this.textBoxValori.Size = new System.Drawing.Size(187, 30);
             this.textBoxValori.TabIndex = 4;
+            this.textBoxValori.TextChanged += new System.EventHandler(this.textBoxValori_TextChanged);
             // 
             // label1
             // 
@@ -96,11 +99,21 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Inserisci qui i valori";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(522, 59);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
+            this.richTextBox1.TabIndex = 5;
+            this.richTextBox1.Text = "";
+            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 341);
+            this.ClientSize = new System.Drawing.Size(725, 345);
+            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxValori);
             this.Controls.Add(this.listValoriArray);
@@ -123,6 +136,7 @@
         private System.Windows.Forms.ListBox listValoriArray;
         private System.Windows.Forms.TextBox textBoxValori;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
