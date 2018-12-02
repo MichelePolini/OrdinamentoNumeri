@@ -33,15 +33,15 @@
             this.buttonImporta = new System.Windows.Forms.Button();
             this.listValoriArray = new System.Windows.Forms.ListBox();
             this.textBoxValori = new System.Windows.Forms.TextBox();
-            this.textArea = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // buttonEsporta
             // 
             this.buttonEsporta.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEsporta.Location = new System.Drawing.Point(272, 195);
+            this.buttonEsporta.Location = new System.Drawing.Point(297, 205);
             this.buttonEsporta.Name = "buttonEsporta";
-            this.buttonEsporta.Size = new System.Drawing.Size(75, 37);
+            this.buttonEsporta.Size = new System.Drawing.Size(90, 37);
             this.buttonEsporta.TabIndex = 0;
             this.buttonEsporta.Text = "Esporta";
             this.buttonEsporta.UseVisualStyleBackColor = true;
@@ -50,7 +50,7 @@
             // buttonInserisci
             // 
             this.buttonInserisci.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonInserisci.Location = new System.Drawing.Point(47, 195);
+            this.buttonInserisci.Location = new System.Drawing.Point(36, 205);
             this.buttonInserisci.Name = "buttonInserisci";
             this.buttonInserisci.Size = new System.Drawing.Size(102, 37);
             this.buttonInserisci.TabIndex = 1;
@@ -61,7 +61,7 @@
             // buttonImporta
             // 
             this.buttonImporta.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonImporta.Location = new System.Drawing.Point(164, 195);
+            this.buttonImporta.Location = new System.Drawing.Point(164, 205);
             this.buttonImporta.Name = "buttonImporta";
             this.buttonImporta.Size = new System.Drawing.Size(102, 37);
             this.buttonImporta.TabIndex = 2;
@@ -82,27 +82,26 @@
             // textBoxValori
             // 
             this.textBoxValori.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxValori.Location = new System.Drawing.Point(184, 116);
+            this.textBoxValori.Location = new System.Drawing.Point(185, 125);
             this.textBoxValori.Name = "textBoxValori";
             this.textBoxValori.Size = new System.Drawing.Size(187, 30);
             this.textBoxValori.TabIndex = 4;
             // 
-            // textArea
+            // label1
             // 
-            this.textArea.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textArea.Location = new System.Drawing.Point(401, 12);
-            this.textArea.Name = "textArea";
-            this.textArea.Size = new System.Drawing.Size(163, 216);
-            this.textArea.TabIndex = 5;
-            this.textArea.Text = "";
-            this.textArea.TextChanged += new System.EventHandler(this.textArea_TextChanged);
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(197, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(165, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Inserisci qui i valori";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(586, 262);
-            this.Controls.Add(this.textArea);
+            this.ClientSize = new System.Drawing.Size(725, 341);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxValori);
             this.Controls.Add(this.listValoriArray);
             this.Controls.Add(this.buttonImporta);
@@ -123,7 +122,7 @@
         private System.Windows.Forms.Button buttonImporta;
         private System.Windows.Forms.ListBox listValoriArray;
         private System.Windows.Forms.TextBox textBoxValori;
-        private System.Windows.Forms.RichTextBox textArea;
+        private System.Windows.Forms.Label label1;
     }
 }
 

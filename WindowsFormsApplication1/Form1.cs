@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading;
 
 namespace WindowsFormsApplication1
 {
@@ -9,8 +10,19 @@ namespace WindowsFormsApplication1
 
         public Form1()
         {
+            Thread t = new Thread(new ThreadStart(SplashScreenStart));
+            t.Start();
+            Thread.Sleep(5000);
+
             InitializeComponent();
 
+            t.Abort();
+
+        }
+
+        public void SplashScreenStart()
+        {
+            Application.Run(new Form2());
         }
 
         public string OpenFile()
@@ -56,7 +68,7 @@ namespace WindowsFormsApplication1
             String line;
             int num;
 
-            textArea.Text = "";
+            //textArea.Text = "";
 
             try
             {
@@ -72,7 +84,7 @@ namespace WindowsFormsApplication1
 
                     try
                     {
-                        textArea.Text += line + "\n";
+                        //textArea.Text += line + "\n";
                         num = System.Convert.ToInt32(line);
 
                         Vector.getInstance().addOrd(num);
@@ -132,6 +144,7 @@ namespace WindowsFormsApplication1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+        
 
         }
     }
